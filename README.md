@@ -53,6 +53,7 @@ To include a plugin, set any variables you need for it, then add it to the `libr
 * `mysql`
 * `redis`
 * `haproxy`
+* `interface`
 
 ## Usage
 
@@ -91,6 +92,25 @@ To use your own custom or upstream collectd plugin, simply have another module d
 
     The password to use for password-protected status pages. Defaults to empty.
 
+### Plugin: `df`
+  - `librato_df_fstype`
+
+    **Type**: array
+
+    The FSType to use. Defaults to `["ext2", "ext3", "ext4", "xfs", "jfs", "btrfs", "reiserfs", "vboxsf", "tmpfs"]`.
+
+  - `librato_df_device`
+
+    **Type**: array
+
+    The Device to use. Defaults to `''`
+
+  - `librato_df_mountpoint`
+
+    **Type**: array
+
+    The MountPoint to use. Defaults to `''`
+
 ### Plugin: `docker`
   - `librato_docker_protocol`
 
@@ -108,7 +128,7 @@ To use your own custom or upstream collectd plugin, simply have another module d
 
     **Type**: string
 
-    The Docker port. Defaults to `2735`
+    The Docker port. Defaults to `2375`
 
 ### Plugin: `elasticsearch`
 
@@ -155,6 +175,10 @@ To use your own custom or upstream collectd plugin, simply have another module d
 
     The default proxies to collect. Defaults to `server`, `frontend`, `backend`.
 
+### Plugin: `interface`
+
+  Interface has no configurable attributes.
+  
 ### Plugin: `jvm`
   - `librato_jvm_host`
 
@@ -443,61 +467,61 @@ To use your own custom or upstream collectd plugin, simply have another module d
 
   The global plugin polling interval in seconds. Defaults to `60`.
 
-- `librato_use_log_file`
+- `librato_logging_use_log_file`
 
   **Type**: true/false
 
   Write collectd logs to a file. Defaults to `true`.
 
-- `librato_use_syslog`
+- `librato_logging_use_syslog`
 
   **Type**: true/false
 
   Write collectd logs to syslog. Defaults to `false`.
 
-- `librato_use_logstash`
+- `librato_logging_use_logstash`
 
   **Type**: true/false
 
   Write collectd logs to a logstash-formatted file. Defaults to `false`.
 
-- `librato_log_file_log_level`
+- `librato_logging_log_file_log_level`
 
   **Type**: string
 
   The log level to use for `log_file`. Defaults to `info`.
 
-- `librato_log_file_filename`
+- `librato_logging_log_file_filename`
 
   **Type**: string
 
   The filename to use for `log_file`. Defaults to `/opt/collectd/var/log/collectd.log`.
 
-- `librato_log_file_timestamp`
+- `librato_logging_log_file_timestamp`
 
   **Type**: true/false
 
   Use timestamps in the log file or not. Defaults to `true`.
 
-- `librato_log_file_print_severity`
+- `librato_logging_log_file_print_severity`
 
   **Type**: true/false
 
   Include severity levels in the log file or not. Defaults to `true`.
 
-- `librato_syslog_log_level`
+- `librato_logging_syslog_log_level`
 
   **Type**: string
 
   The log level to use for `syslog`. Defaults to `info`.
 
-- `librato_logstash_log_level`
+- `librato_logging_logstash_log_level`
 
   **Type**: string
 
   The log level to use for `logstash`. Defaults to `info`.
 
-- `librato_logstash_filename`
+- `librato_logging_logstash_filename`
 
   **Type**: string
 
@@ -507,7 +531,7 @@ To use your own custom or upstream collectd plugin, simply have another module d
 
   **Type**: array
 
-  A list of default plugins to include. Defaults to: `cpu`, `df`, `disk`, `swap`, `memory`, `load`.
+  A list of default plugins to include. Defaults to: `cpu`, `disk`, `swap`, `memory`, `load`.
 
 - `librato_enabled_plugins`
    
