@@ -17,7 +17,7 @@ The bare minimum required to get started is to set the `email` and `token` varia
 ```yaml
 - hosts: all
   roles:
-    - { role: librato.librato, librato_email: 'you@domain.com', librato_token: 'your-token-here' }
+    - { role: AerisCloud.librato, librato_email: 'you@domain.com', librato_token: 'your-token-here' }
 ```
 
 By default, the following plugins are enabled: `cpu`, `df`, `disk`, `swap`, `memory`, `load`.
