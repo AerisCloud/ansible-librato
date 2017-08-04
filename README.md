@@ -17,7 +17,7 @@ The bare minimum required to get started is to set the `email` and `token` varia
 ```yaml
 - hosts: all
   roles:
-    - { role: librato.librato, librato_email: 'you@domain.com', librato_token: 'your-token-here' }
+    - { role: AerisCloud.librato, librato_email: 'you@domain.com', librato_token: 'your-token-here' }
 ```
 
 By default, the following plugins are enabled: `cpu`, `df`, `disk`, `swap`, `memory`, `load`.
@@ -564,7 +564,7 @@ This role requires Ansible 2.2 or later.
 Integration tests utilize `kitchen-ansible` and `serverspec`. To run the test suite:
 
 1. Run `bundle install`
-2. Run `kitchen test`
+2. Run `kitchen test`. To run an individual test, run `kitchen test [platform name]`. E.g. `kitchen test centos-7`.
 
 #### Testing Amazon Linux
 
